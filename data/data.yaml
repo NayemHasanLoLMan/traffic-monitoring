@@ -1,0 +1,18 @@
+path: C:\Users\USER\Downloads\Application\Test\data 
+train: train/images
+val: valid/images
+test: test/images
+
+# train: ../train/images
+# val: ../valid/images
+# test: ../test/images
+
+nc: 11
+names: ['Auto Rickshaw', 'Bus', 'CNG-Tempo', 'Cycle Rickshaw', 'Jeep-SUV', 'Microbus', 'Minibus', 'Motorcycle', 'Private-Sedan Car', 'Trailer', 'Truck']
+
+roboflow:
+  workspace: free-hosn6
+  project: regnum-traffic-assessment
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/free-hosn6/regnum-traffic-assessment/dataset/2

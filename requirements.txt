@@ -1,0 +1,7 @@
+ultralytics
+onnxruntime-gpu
+PyQt6
+opencv-python
+supervision 
+numpy
+pandas

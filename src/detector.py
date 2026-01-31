@@ -3,11 +3,15 @@ import numpy as np
 from ultralytics import YOLO
 import supervision as sv
 from src.tracker import get_tracker_config
+import torch
 
 class TrafficDetector:
     def __init__(self, model_path):
         print(f"Loading model from: {model_path}")
-        self.model = YOLO(model_path)
+        # Determine the device to use
+        device = '0' if torch.cuda.is_available() else 'cpu'
+        print(f"Running detection on device: {device}")
+        self.model = YOLO(model_path, device=device)
         self.tracker_config = get_tracker_config()
 
         self.box_annotator = sv.BoxAnnotator(thickness=2)

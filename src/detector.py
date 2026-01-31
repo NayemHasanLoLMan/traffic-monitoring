@@ -9,9 +9,10 @@ class TrafficDetector:
     def __init__(self, model_path):
         print(f"Loading model from: {model_path}")
         # Determine the device to use
-        device = '0' if torch.cuda.is_available() else 'cpu'
+        device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
         print(f"Running detection on device: {device}")
-        self.model = YOLO(model_path, device=device)
+        self.model = YOLO(model_path)
+        self.model.to(device)
         self.tracker_config = get_tracker_config()
 
         self.box_annotator = sv.BoxAnnotator(thickness=2)

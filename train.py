@@ -12,6 +12,7 @@ def train_traffic_model():
 
     print("starting training...")
     model.train(
+        
         data='data/data.yaml',  
         epochs=50,
         imgsz=640,
